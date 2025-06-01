@@ -207,7 +207,7 @@ declare module "@uidotdev/usehooks" {
 
   export function useNetworkState(): NetworkState;
 
-  export function useObjectState<T>(initialValue: T): [T, (arg: T) => void];
+  export function useObjectState<T>(initialValue: T): [T, (arg: T | ((arg: (arg: T) => Partial<T>) => void)) => void];
 
   export function useOrientation(): {
     angle: number;
